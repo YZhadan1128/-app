@@ -1,0 +1,42 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "yzd仿网易云音乐",
+				"enablePullDownRefresh": true,
+				"titleNView":{
+					"buttons":[
+						{
+							"type": "menu",
+							"float": "left"
+						},
+						{
+							"type": "none",
+							"text": "\ue466",
+							"fontSrc" : "./static/uni.ttf"
+						}
+					]
+				}
+			}
+		},
+		{
+			"path": "pages/search/search",
+			"style": {
+				"titleNView":{
+					"searchInput":{
+						"placeholder": "大家都在搜: ",
+						"align": "left",
+						"autoFocus": true
+					}
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
