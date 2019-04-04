@@ -31,6 +31,12 @@
 					}
 				}
 			}
+		},
+		{
+			"path": "pages/music/music",
+			"style":{
+				"navigationBarTitleText":"播放中..."
+			}
 		}
 	],
 	"globalStyle": {

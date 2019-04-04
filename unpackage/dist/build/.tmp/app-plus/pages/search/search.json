@@ -1,0 +1,10 @@
+{
+  "usingComponents": {},
+  "titleNView": {
+    "searchInput": {
+      "placeholder": "大家都在搜: ",
+      "align": "left",
+      "autoFocus": true
+    }
+  }
+}

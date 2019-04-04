@@ -1,0 +1,12 @@
+<import src="/components/uni-drawer/uni-drawer.vue.wxml" />
+<import src="/components/uni-list/uni-list.vue.wxml" />
+<import src="/components/uni-list-item/uni-list-item.vue.wxml" />
+<import src="/components/uni-tag/uni-tag.vue.wxml" />
+<import src="/common/slots.wxml" />
+<import src="/components/uni-icon/uni-icon.vue.wxml" />
+<import src="/components/uni-badge/uni-badge.vue.wxml" />
+
+<template name="ffd6c0c6-default-ffd6c0c6-11"><template title="设置" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-1'],$root}}" is="41db8e4f"></template><template title="夜间模式" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-2'],$root}}" is="41db8e4f"></template><template title="定时关闭" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-3'],$root}}" is="41db8e4f"></template><template title="音乐闹钟" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-4'],$root}}" is="41db8e4f"></template><template title="在线听歌免流量" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-5'],$root}}" is="41db8e4f"></template><template title="精品游戏推荐" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-6'],$root}}" is="41db8e4f"></template><template title="优惠券" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-7'],$root}}" is="41db8e4f"></template><template title="加入yzd音乐人" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-8'],$root}}" is="41db8e4f"></template><template title="分享yzd音乐" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-9'],$root}}" is="41db8e4f"></template><template title="关于" note show-arrow="false" data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-10'],$root}}" is="41db8e4f"></template></template>
+
+<template name="ffd6c0c6-default-ffd6c0c6-12"><view class="_view ffd6c0c6 account">账户</view><template data="{{...$root['0'], ...$root[$kk+'ffd6c0c6-11'],$root, $slotdefault:'ffd6c0c6-default-ffd6c0c6-11'}}" is="14687a3a"></template></template>
+

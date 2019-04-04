@@ -77,6 +77,8 @@
 				</uni-list>
 			</uni-drawer>
 		</view>
+		
+		<player></player>
 	</view>
 </template>
 
@@ -84,11 +86,13 @@
 	import uniList from "@/components/uni-list/uni-list.vue"
 	import uniListItem from "@/components/uni-list-item/uni-list-item.vue"
 	import uniDrawer from '@/components/uni-drawer/uni-drawer.vue'
+	import player from '@/components/player/player.vue'
 	export default {
 		components:{
 			uniList,
 			uniListItem,
-			uniDrawer
+			uniDrawer,
+			player
 		},
 		data() {
 			return {
@@ -125,7 +129,7 @@
 			uni.request({
 				url: "https://api.wulv5.com/music/personalized/djprogram",
 				success: (res) => {
-					console.log(res)
+					// console.log(res)
 					this.station = res.data.result
 				}
 			})
