@@ -1,0 +1,1 @@
+<template name="0a9ebc61"><view class="_view M0a9ebc61"><view class="_ul M0a9ebc61"><view wx:key="i" key="{{i}}" bindtap="handleProxy" data-eventid="{{'0a9ebc61-0-'+i}}" data-comkey="{{$k}}" wx:for="{{history}}" wx:for-index="i" wx:for-item="item" class="_li M0a9ebc61">{{item.detail.songs[0].name}}--{{item.detail.songs[0].ar[0].name}}</view></view></view></template>

@@ -13,7 +13,7 @@
 			推荐歌单
 		</view>
 		<view class="uni-product-list">
-			<view class="uni-product" v-for="(item,index) in list" :key="index">
+			<view @click="playlist(item)" class="uni-product" v-for="(item,index) in list" :key="index">
 				<view class="image-view">
 					<image class="uni-product-image" :src="item.picUrl"></image>
 					<p class="uni-product-title">{{item.name}}</p>
@@ -57,20 +57,17 @@
 		</view>
 		<view class="uni-title des">
 			
-			<p>感谢使用 author: YZhadan,github: <a href="https://github.com/YZhadan1128">YZhadan1128</a></p>
+			<p>感谢使用 author: YZhadan,github: <a href="https://github.com">YZhadan的github</a></p>
 		</view>
 		<view>
 			<uni-drawer @close="closeDrawer" :visible="visible" mode="left">
 				<view class="account">账户</view>
 				<uni-list style="margin-top:150upx">
-					
+					<uni-list-item @click="history" title="历史记录" note="" show-arrow="false"></uni-list-item>
+					<uni-list-item @click="download" title="下载中心" note="" show-arrow="false"></uni-list-item>
 					<uni-list-item title="设置" note="" show-arrow="false"></uni-list-item>
 					<uni-list-item title="夜间模式" note="" show-arrow="false"></uni-list-item>
-					<uni-list-item title="定时关闭" note="" show-arrow="false"></uni-list-item>
-					<uni-list-item title="音乐闹钟" note="" show-arrow="false"></uni-list-item>
-					<uni-list-item title="在线听歌免流量" note="" show-arrow="false"></uni-list-item>
-					<uni-list-item title="精品游戏推荐" note="" show-arrow="false"></uni-list-item>
-					<uni-list-item title="优惠券" note="" show-arrow="false"></uni-list-item>
+					
 					<uni-list-item title="加入yzd音乐人" note="" show-arrow="false"></uni-list-item>
 					<uni-list-item title="分享yzd音乐" note="" show-arrow="false"></uni-list-item>
 					<uni-list-item title="关于" note="" show-arrow="false"></uni-list-item>
@@ -142,12 +139,32 @@
 			},
 			menu(){
 				this.visible = true
+			},
+			closeDrawer() {
+				this.visible = false
+			},
+			history(){
+				uni.navigateTo({
+					url:"/pages/history/history"
+				})
+			},
+			download(){
+				uni.navigateTo({
+					url:"/pages/download/download"
+				})
+			},
+			playlist(item) {
+				// console.log(item)
+				uni.navigateTo({
+					url: `/pages/playerdetail/playerdetail?id=${item.id}`
+				})
+				
 			}
 		},
 		onNavigationBarButtonTap(e){
 			//e.index===0 search
 			//e.index===1 menu
-			console.log(e)
+			// console.log(e)
 			this[e.type]()
 		},
 		onPullDownRefresh() {

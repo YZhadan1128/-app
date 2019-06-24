@@ -1,0 +1,1 @@
+<template name="3a50db12"><view class="_view M3a50db12"><view class="_ul M3a50db12"><view wx:key="i" key="{{i}}" wx:for="{{list}}" wx:for-index="i" wx:for-item="item" class="_li M3a50db12">{{ item.filePath }}</view></view></view></template>

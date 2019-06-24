@@ -1,7 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/music/music",
+    "pages/history/history",
+    "pages/download/download",
+    "pages/playerdetail/playerdetail"
   ],
   "subPackages": [],
   "window": {
@@ -15,6 +19,6 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "wyy",
-  "compilerVersion": "1.8.2"
+  "appname": "听听歌吧弟弟",
+  "compilerVersion": "1.9.9"
 }

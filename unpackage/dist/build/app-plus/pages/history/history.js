@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"_ul,.",[1],"_li{ list-style: none; }\n.",[1],"_li{ line-height: ",[0,50],"; font-size: ",[0,18],"; color: #949494; }\n",],undefined,{path:"./pages/history/history.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/history/history.wxml') } }));

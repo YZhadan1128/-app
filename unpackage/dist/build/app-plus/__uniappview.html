@@ -4,8 +4,11 @@
     <head>
         <meta charset="UTF-8" />
         <script>
-            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
-            document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
         </script>
         <title>View</title>
         <style>
@@ -17,11 +20,9 @@
             input[type="search"i]::-webkit-search-cancel-button {
                 display: none;
             }
-
         </style>
         <script>
-            var __wxConfig = {"debug":false,"appname":"wyy","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"usingComponents":{},"navigationBarTitleText":"yzd仿网易云音乐","enablePullDownRefresh":true,"titleNView":{"buttons":[{"type":"menu","float":"left"},{"type":"none","text":"","fontSrc":"./static/uni.ttf"}]}}},"pages/search/search.html":{"window":{"usingComponents":{},"titleNView":{"searchInput":{"placeholder":"大家都在搜: ","align":"left","autoFocus":true}}}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"uni-app","navigationBarBackgroundColor":"#F8F8F8","backgroundColor":"#F8F8F8"}},"tabBar":{"color":"","selectedColor":"","backgroundColor":"","borderStyle":"black","list":[],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/search/search"],"subPackages":[],"usingComponents":{},"splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"1.8.2"}
-
+            var __wxConfig = {"debug":false,"appname":"听听歌吧弟弟","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"usingComponents":{},"navigationBarTitleText":"调用网易云API","enablePullDownRefresh":true,"titleNView":{"buttons":[{"type":"menu","float":"left"},{"type":"none","text":"","fontSrc":"./static/uni.ttf"}]}}},"pages/search/search.html":{"window":{"usingComponents":{},"titleNView":{"searchInput":{"placeholder":"大家都在搜: ","align":"left","autoFocus":true}}}},"pages/music/music.html":{"window":{"usingComponents":{},"navigationBarTitleText":"播放中..."}},"pages/history/history.html":{"window":{"usingComponents":{},"navigationBarTitleText":"历史记录"}},"pages/download/download.html":{"window":{"usingComponents":{},"navigationBarTitleText":"下载管理"}},"pages/playerdetail/playerdetail.html":{"window":{"usingComponents":{},"navigationBarTitleText":"歌单","titleNView":{"type":"transparent"}}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"uni-app","navigationBarBackgroundColor":"#F8F8F8","backgroundColor":"#F8F8F8"}},"tabBar":{"color":"","selectedColor":"","backgroundColor":"","borderStyle":"black","list":[],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/search/search","pages/music/music","pages/history/history","pages/download/download","pages/playerdetail/playerdetail"],"subPackages":[],"usingComponents":{},"splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"1.9.9"}
         </script>
         <script>
             var __id__ = '';
@@ -29,9 +30,22 @@
                 __id__ = page;
                 document.title = page;
                 // window.history.pushState('', '', page);
-                plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
             };
-
         </script>
         <script src="__uniappes6.js"></script>
         <script src="uniapp://ready"></script>

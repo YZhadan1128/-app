@@ -1,0 +1,10 @@
+
+._ul,._li{
+	list-style: none;
+}
+._li{
+	line-height: 50rpx;
+	font-size: 18rpx;
+	color: #949494;
+}
+
